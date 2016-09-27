@@ -238,6 +238,7 @@ module.exports = {
             if (this.debug) {
                 console.debug("Connecting to hosted Ethereum node...");
             }
+						console.log("Connecting to a hosted Ethereum node...");
             this.rpc.ipcpath = null;
             this.rpc.reset();
             this.rpc.useHostedNode();
@@ -299,6 +300,7 @@ module.exports = {
                 self.connection = false;
                 if (!options.attempts) {
                     options.attempts = 1;
+										console.log("An error occurred connecting to", options.http);
                     return self.connect(options, callback);
                 }
                 return callback(false);
